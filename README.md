@@ -1,6 +1,6 @@
 ---
-title: Marimo App Template
-emoji: 🏢
+title: marimo app template
+emoji: 🍃
 colorFrom: indigo
 colorTo: purple
 sdk: docker
@@ -9,4 +9,5 @@ license: mit
 short_description: Template for deploying a marimo application to HF
 ---
 
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+Check out marimo at <https://github.com/marimo-team/marimo>
+Check out the configuration reference at <https://huggingface.co/docs/hub/spaces-config-reference>
