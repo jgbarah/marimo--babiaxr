@@ -4,7 +4,7 @@ emoji: 🍃
 colorFrom: indigo
 colorTo: purple
 sdk: docker
-pinned: false
+pinned: true
 license: mit
 short_description: Template for deploying a marimo application to HF
 ---
