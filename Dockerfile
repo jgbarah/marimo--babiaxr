@@ -13,4 +13,4 @@ RUN uv pip install -r requirements.txt
 COPY --chown=user . /app
 USER user
 
-CMD ["marimo", "run", "app.py", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["marimo", "run", "app.py", "--include-code", "--host", "0.0.0.0", "--port", "7860"]
