@@ -11,6 +11,9 @@ COPY --chown=user ./requirements.txt requirements.txt
 RUN uv pip install -r requirements.txt
 
 COPY --chown=user . /app
+RUN mkdir -p /app/__marimo__ && \
+    chown -R user:user /app && \
+    chmod -R 755 /app
 USER user
 
 CMD ["marimo", "run", "app.py", "--include-code", "--host", "0.0.0.0", "--port", "7860"]
