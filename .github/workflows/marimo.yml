@@ -8,14 +8,12 @@ jobs:
 
         steps:
             # ... checkout and install dependencies
+            - name: Checkout
+              uses: actions/checkout@v4
 
             - name: Install dependencies
               run: |
                   pip install marimo
-
-            - name: Ls
-              run: |
-                  ls
 
             - name: 📄 Export notebook
               run: |
