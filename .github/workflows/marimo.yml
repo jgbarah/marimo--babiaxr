@@ -13,6 +13,10 @@ jobs:
               run: |
                   pip install marimo
 
+            - name: Ls
+              run: |
+                  ls
+
             - name: 📄 Export notebook
               run: |
                   marimo export html-wasm main.py -o main.html --mode run
