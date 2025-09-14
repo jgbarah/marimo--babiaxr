@@ -22,7 +22,7 @@ jobs:
             - name: 📦 Upload Pages Artifact
               uses: actions/upload-pages-artifact@v3
               with:
-                  path: main.html
+                  path: .
 
     deploy:
         needs: build
