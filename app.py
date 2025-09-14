@@ -10,7 +10,7 @@ def _():
 
     aframe_html = """<html>
       <head>
-        <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+        <script crossorigin="anonymous" src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
       </head>
       <body>
         <a-scene>
