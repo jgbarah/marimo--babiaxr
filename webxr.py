@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.15.3"
+__generated_with = "0.15.5"
 app = marimo.App()
 
 
@@ -64,7 +64,7 @@ def _(mo):
 
             <!-- Light -->
              <a-light type="point" intensity="1" position="-10 20 30"></a-light>
-      
+
             <!-- Camera -->
             <a-entity movement-controls="fly: true" position="0 5 20">
                 <a-entity camera position="0 0 0" look-controls></a-entity>
