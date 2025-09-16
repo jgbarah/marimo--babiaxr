@@ -60,7 +60,7 @@ def _():
 
 
 @app.cell
-def _(mo):
+def _():
     def build_scene():
         html = """<!DOCTYPE html>
     <html lang="en">
@@ -88,33 +88,42 @@ def _(mo):
     </html>"""
         return html
 
-    def build_pie():
-        html = """<a-entity babia-pie='legend: true; palette: blues; key:model; size: sales;
-        data:[{"model": "leon", "motor": "electric", "color": "red",
+    import json
+
+    def build_pie(data):
+        html = f"""<a-entity babia-pie='legend: true; palette: blues; key:model; size: sales;
+        data:{json.dumps(data)}'
+        position="-1 0.5 -4" rotation="90 0 0"></a-entity>
+        """
+        return html
+
+    return build_pie, build_scene
+
+
+@app.cell
+def _(build_pie, build_scene, mo):
+    data = [{"model": "Leon", "motor": "electric", "color": "red",
             "doors": 5, "sales": 10},
-            {"model": "ibiza", "motor": "electric", "color": "white", 
+            {"model": "Ibiza", "motor": "electric", "color": "white", 
             "doors": 3, "sales": 15},
-            {"model": "cordoba", "motor": "diesel", "color": "black", 
+            {"model": "Cordoba", "motor": "diesel", "color": "black", 
             "doors": 5, "sales": 3},
-            {"model": "toledo", "motor": "diesel", "color": "white", 
+            {"model": "Toledo", "motor": "diesel", "color": "white", 
             "doors": 5, "sales": 18},
-            {"model": "altea", "motor": "diesel", "color": "red", 
+            {"model": "Altea", "motor": "diesel", "color": "red", 
             "doors": 5, "sales": 4},
-            {"model": "arosa", "motor": "electric", "color": "red", 
+            {"model": "Arosa", "motor": "electric", "color": "red", 
             "doors": 3, "sales": 12},
-            {"model": "alhambra", "motor": "diesel", "color": "white", 
+            {"model": "Alhambra", "motor": "diesel", "color": "white", 
             "doors": 5, "sales": 5},
             {"model": "600", "motor": "gasoline", "color": "yellow", 
             "doors": 3, "sales": 20},
             {"model": "127", "motor": "gasoline", "color": "white", 
             "doors": 5, "sales": 2},
-            {"model": "panda", "motor": "gasoline", "color": "black", 
-            "doors": 3, "sales": 13}]'
-        position="-1 0.5 -4" rotation="90 0 0"></a-entity>
-        """
-        return html
+            {"model": "Panda", "motor": "gasoline", "color": "black", 
+            "doors": 3, "sales": 13}]
 
-    pie = build_pie()
+    pie = build_pie(data=data)
     scene = build_scene().format(chart=pie)
     mo.iframe(scene)
     return
