@@ -4,30 +4,10 @@ __generated_with = "0.15.5"
 app = marimo.App()
 
 
-@app.cell(hide_code=True)
+@app.cell
 def _():
     import marimo as mo
 
-    aframe_html = """<html>
-      <head>
-        <script crossorigin="anonymous" src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
-      </head>
-      <body>
-        <a-scene>
-          <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-          <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-          <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-          <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-          <a-sky color="#ECECEC"></a-sky>
-        </a-scene>
-      </body>
-    </html>"""
-    mo.iframe(aframe_html)
-    return (mo,)
-
-
-@app.cell
-def _(mo):
     babiaxr_html = """<!DOCTYPE html>
     <html lang="en">
       <head>
@@ -60,13 +40,13 @@ def _(mo):
             "doors": 5, "sales": 2},
             {"model": "panda", "motor": "gasoline", "color": "black", 
             "doors": 3, "sales": 13}]'
-        position="-20 2 0" rotation="90 0 0" scale="2 2 2"></a-entity>
+        position="-1 0.5 -4" rotation="90 0 0"></a-entity>
 
             <!-- Light -->
              <a-light type="point" intensity="1" position="-10 20 30"></a-light>
 
             <!-- Camera -->
-            <a-entity movement-controls="fly: true" position="0 5 20">
+            <a-entity movement-controls="fly: true" position="0 0 0">
                 <a-entity camera position="0 0 0" look-controls></a-entity>
                 <a-entity cursor="rayOrigin:mouse"></a-entity>
                 <a-entity laser-controls="hand: right"></a-entity>

@@ -23,8 +23,8 @@ jobs:
 
             - name: 📄 Export notebook
               run: |
-                  marimo export html-wasm babia.py -o babiaxr.html --mode edit
-                  marimo export html-wasm aframe.py -o aframe.html --mode run
+                  marimo export html-wasm babiaxr.py -o babiaxr.html --mode edit
+                  marimo export html-wasm aframe.py -o aframe.html --mode edit
 
             - name: 📦 Upload Pages Artifact
               uses: actions/upload-pages-artifact@v3
