@@ -18,6 +18,7 @@ jobs:
             - name: 📄 Export notebook
               run: |
                   marimo export html-wasm main.py -o index.html --mode edit
+                  marimo export html-wasm main.py -o index.html --mode run
 
             - name: 📦 Upload Pages Artifact
               uses: actions/upload-pages-artifact@v3
